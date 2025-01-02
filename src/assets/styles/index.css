@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../font/Inter_18pt-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../font/Inter_28pt-SemiBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("../font/Inter_18pt-Bold.ttf") format("truetype");
+  }
+}
+
+@layer utilities {
+  .spec-container {
+    @apply max-w-[1136px] mx-auto;
+  }
+}
+
+* {
+  @apply font-Inter;
+}
+
+body {
+  @apply bg-gray-dark text-white;
+}
+
+.animate-scroll-left {
+  animation: scroll-left linear 25s;
+  animation-iteration-count: infinite;
+}
+.animate-scroll-left-2 {
+  animation: scroll-left-2 linear 25s;
+  animation-iteration-count: infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right linear 25s;
+  animation-iteration-count: infinite;
+}
+
+/* animation on product teams items */
+.animate-scroll-left-teams {
+  animation: scroll-left-teams linear 60s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-974.41px);
+  }
+}
+@keyframes scroll-left-2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-764.11px);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(867.5px);
+  }
+}
+@keyframes scroll-left-teams {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2081.5px);
+  }
+}

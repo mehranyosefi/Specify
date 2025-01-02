@@ -1,0 +1,31 @@
+.slider-container-study {
+  // @apply m-auto;
+  .slick-slide {
+    @apply w-[90vw] lg:w-[80vw] xl:w-[52vw];
+
+    &.slick-current .card{
+      @apply border-gray-light opacity-100;
+    }
+  }
+  .card {
+    @apply border border-gray-light/20 rounded-2xl flex mx-5  hover:cursor-grab opacity-50 transition-all duration-300;
+    
+    >div{
+      @apply border-r border-r-gray-light px-10 items-center rounded-l-2xl;
+    }
+  }
+  .slick-dots {
+    bottom: -70px;
+    li {
+      width: 5px!important;
+      button{
+        &::before {
+          @apply w-5 h-5 text-white text-[.5rem];
+        }
+      }
+      &.slick-active button::before{
+        color: white;
+      }
+    }
+  }
+}

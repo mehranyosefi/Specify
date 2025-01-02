@@ -1,0 +1,12 @@
+.header {
+  @apply spec-container border-b border-b-gray-light;
+
+  .logo {
+    @apply flex items-center;
+
+    a div {
+      /* background: url("@/assets/img/logo.svg");  */
+      @apply w-5 h-5 bg-slate-300;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+  .menu {
+    @apply p-0 m-0 list-none flex items-center text-white/80 relative text-sm;
+    >li {
+      @apply mx-4  hover:text-white hover:cursor-auto py-5;
+
+      &:hover svg {
+        @apply rotate-180 transition-all duration-300;
+      }
+      >span {
+        @apply flex items-center hover:cursor-default;
+      }
+    }
+
+    &__sub {
+      @apply absolute border bg-gray-dark border-gray-light rounded-md top-[3.5rem] animate-init;
+    }
+  }
