@@ -8,12 +8,11 @@ function SpecHeader() {
         <div className='bg-gray-dark sticky top-0 z-30'>
             <header className="header">
                 <div className='flex items-center justify-between'>
-                    <section className='logo'>
+                    <section className='header--logo'>
                         <a href="/">Specify</a>
                     </section>
-                    <section><SpecMenu></SpecMenu></section>
-                    <section>
-
+                    <section className="header--menu"><SpecMenu></SpecMenu></section>
+                    <section className="header--sign">
                         <SpecButton content="Sign in" to="/login"
                             className="border-gray-light px-4 pt-[.25rem] pb-[.4rem] rounded text-sm hover:bg-gray-light"
                         ></SpecButton>
