@@ -28,12 +28,16 @@
 
 @layer utilities {
   .spec-container {
-    @apply max-w-[1136px] mx-auto;
+    @apply max-w-[1136px] mx-auto max-lg:px-5;
   }
 }
 
 * {
   @apply font-Inter;
+}
+
+html {
+  @apply text-[.9rem] md:text-[.95rem] xl:text-[1rem] 2xl:text-[1.1rem];
 }
 
 body {

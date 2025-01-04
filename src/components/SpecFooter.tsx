@@ -2,12 +2,12 @@ import { footerMenuItems } from "@/types"
 
 function SpecFooter() {
     return (
-        <footer className='mt-48 relative spec-container mb-10'>
+        <footer className='mt-48 relative spec-container mb-10 max-w-full overflow-hidden'>
             <hr className='text-gray-light'></hr>
             <div className="my-14">
-                <ul className="flex justify-around items-start list-none">
+                <ul className="flex flex-wrap justify-center sm:justify-around items-start list-none">
                     {footerMenuItems.map((item) => {
-                        return <li className="flex flex-col" key={item.category}>
+                        return <li className="w-[40%] max-sm:pl-10 sm:w-auto flex flex-col" key={item.category}>
                             <span className="font-semibold mb-2">{item.category}</span>
                             {item.items.map(i => {
                                 return <a className="text-white/80 mt-3 text-sm hover:text-white transition-colors group" href={i.to} key={i.title}>

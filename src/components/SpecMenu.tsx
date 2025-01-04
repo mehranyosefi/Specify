@@ -76,7 +76,7 @@ function SpecMenu() {
                         <use className="size-5" href='/src/assets/img/icons.svg#arrow-down-rounded'></use>
                     </svg>
                 </span>
-                {resourcesSubMenuActive && <div className="menu__sub text-white/80 px-6 right-12 min-w-[210px]">
+                {resourcesSubMenuActive && <div className="menu__sub text-white/80 px-677 right-12 min-w-[210px]">
                     <ul>
                         <li className="my-4 hover:text-white">
                             <a className="flex items-center" href="#Blog">

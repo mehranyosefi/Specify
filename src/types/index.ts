@@ -12,6 +12,10 @@ export type PropsButton = {
   styles?: object;
   to?: string;
   className?: string;
+  onButtonClick?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    arg?: string | object
+  ) => void;
 };
 
 export type PropsSpecifyLove = {

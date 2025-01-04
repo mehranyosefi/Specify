@@ -1,12 +1,12 @@
 .header {
-  @apply spec-container border-b border-b-gray-light;
+  @apply spec-container border-b border-b-gray-light max-md:py-5;
 
-  .logo {
-    @apply flex items-center;
-
-    a div {
-      /* background: url("@/assets/img/logo.svg");  */
-      @apply w-5 h-5 bg-slate-300;
-    }
+  &--logo {
+  }
+  &--menu {
+    @apply max-md:hidden;
+  }
+  &--sign {
+    @apply max-md:hidden;
   }
 }

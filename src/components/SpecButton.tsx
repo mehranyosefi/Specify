@@ -18,11 +18,11 @@ import type { PropsButton } from "src/types"
 // SpecButton.Prepend = ButtonPrepend
 // SpecButton.Append = ButtonAppend
 function SpecButton(props: PropsButton) {
-    const { prepend = null, content, append = null, styles, to = null, className = null } = props
+    const { prepend = null, content, append = null, styles, to = null, className = null, onButtonClick } = props
     return (
         <>
             {!to ?
-                <button className={`button ${className}`} style={styles}>
+                <button className={`button ${className}`} style={styles} onClick={onButtonClick}>
                     {prepend}
                     {content}
                     {append}
