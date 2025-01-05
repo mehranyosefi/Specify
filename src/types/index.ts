@@ -19,8 +19,8 @@ export type PropsButton = {
 };
 
 export type PropsSpecifyLove = {
-  settings: object;
-  style: object;
+  settings?: object;
+  style?: object;
   className: string;
 };
 

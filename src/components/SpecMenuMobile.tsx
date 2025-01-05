@@ -1,20 +1,26 @@
-import { forwardRef, useRef, useState } from "react"
+import { forwardRef, useRef, useState, useImperativeHandle, Ref } from "react"
 import SpecButton from "./SpecButton"
 
-const SpecMenuMobile = forwardRef((props, ref) => {
+interface RefObject {
+    toggleMenu: (param: boolean) => void
+}
+
+const SpecMenuMobile = forwardRef((params, ref: Ref<RefObject>) => {
+    console.log(params)
     const menu = useRef<HTMLElement | null>(null)
-    // requestAnimationFrame(toggleMenu);
-    ref!.current = toggleMenu;
+
+    useImperativeHandle(ref, () => ({ toggleMenu }))
+
     const [subMenu, setSubMenu] = useState({
         solutions: false,
         resources: false,
     })
 
-    function toggleMenu(entry): void {
+    function toggleMenu(entry: boolean): void {
         if (!entry) {
-            menu.current.style.height = "calc(100% - 50px)"
+            menu.current!.style.height = "calc(100% - 50px)"
         } else {
-            menu.current.style.height = "0px"
+            menu.current!.style.height = "0px"
         }
 
     }
@@ -32,7 +38,7 @@ const SpecMenuMobile = forwardRef((props, ref) => {
         transition-all duration-300 ease-out border-b border-b-gray-light">
             <div className="px-5 py-10">
                 <li>
-                    <span className="inline-flex" onClick={() => handleSubMenu('solutions')}>
+                    <span className="inline-flex cursor-pointer" onClick={() => handleSubMenu('solutions')}>
                         <span className="text-3xl font-semibold">Solutions</span>
                         <svg className={`size-8 ml-1 transition-all duration-300 ${subMenu.solutions ? 'rotate-180' : ''}`}>
                             <use className="size-8" href="/src/assets/img/icons.svg#arrow-down-rounded"></use>
@@ -89,13 +95,13 @@ const SpecMenuMobile = forwardRef((props, ref) => {
                     }
                 </li>
                 <li className="mt-10">
-                    <span className="inline-flex" onClick={() => handleSubMenu('resources')}>
+                    <span className="inline-flex cursor-pointer" onClick={() => handleSubMenu('resources')}>
                         <span className="text-3xl font-semibold">Resources</span>
                         <svg className={`size-8 ml-1 transition-all duration-300 ${subMenu.resources ? 'rotate-180' : ''}`}>
                             <use className="size-8" href="/src/assets/img/icons.svg#arrow-down-rounded"></use>
                         </svg>
                     </span>
-                    {subMenu.resources && <ul className="transition-all duration-[400ms]">
+                    {subMenu.resources && <ul className="transition-all duration-[400ms] p-3">
                         <li className="my-4 hover:text-white">
                             <a className="flex items-center" href="#Blog">
                                 <svg className="size-7"><use className="size-7" href="/src/assets/img/icons.svg#view-page"></use></svg>

@@ -1,13 +1,13 @@
 import Slider from "react-slick"
 import SpecButton from "./SpecButton"
 import "/src/assets/styles/components/SpecSlider.scss"
-import type { PropsSpecifyLove } from "../types"
+// import type { PropsSpecifyLove } from "../types"
 import { studyCasesItems } from "../types"
 
 
 
 
-export function AutoPlaySpecifyLove(props: PropsSpecifyLove) {
+export function AutoPlaySpecifyLove(props: { settings?: object, style?: object, className?: string }) {
     const {
         settings = {
             dots: false,
@@ -111,7 +111,7 @@ export function AutoPlaySpecifyLove(props: PropsSpecifyLove) {
 
 }
 
-export function StudyCases(props) {
+export function StudyCases(props: { settings?: object, style?: object, className?: string }) {
     const {
         settings = {
             arrows: false,
@@ -133,7 +133,7 @@ export function StudyCases(props) {
     } = props
 
 
-    function Card(props) {
+    function Card(props: { title?: string, apps: string[], person: { name: string, role: string, description: string }, radiantColor: string }) {
         const { title, apps, person, radiantColor } = props;
         return (
             <div className="card">
@@ -146,7 +146,7 @@ export function StudyCases(props) {
                     <div className="mt-20 max-md:hidden">
                         <p className="text-white/60 text-lg">INTEGRATED APPS</p>
                         <div className="flex items-center justify-center mt-4">
-                            {apps.map((item) => {
+                            {apps.map((item: string) => {
                                 return <a key={item} href={`#{item}`} className="rounded-full size-10 flex items-center justify-center mx-1 transition-colors duration-200 hover:!bg-white hover:text-gray-dark" style={{ background: radiantColor }}>
                                     <svg className="size-6">
                                         <use className="size-6" href={`/src/assets/img/icons.svg#${item}`}></use>

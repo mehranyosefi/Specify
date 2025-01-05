@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, MouseEvent } from 'react'
 import SpecHeader from './components/SpecHeader.tsx'
 import SpecFooter from './components/SpecFooter.tsx'
 import './assets/styles/components/App.scss'
@@ -55,7 +55,8 @@ function App() {
     handleActiveMovie(nextKey as keyof DesignTokenMovies)
   }
 
-  function playMovie(e, entry: string): void {
+  function playMovie(e: MouseEvent, entry: string): void {
+    console.log(e)
     type MovieRefs = typeof moveieRefs.current;
     setMoviesOver({
       ...moviesOver,
@@ -237,7 +238,7 @@ function App() {
                 <div className='w-[60%] ml-[2%] hidden xl:block'>
                   <div className='frame p-5 w-[700px] h[380px]'>
                     <video className='w-full rounded-2xl animate-init' src={`/src/assets/video/${currentDesignTokenMovieName}.mp4`} autoPlay playsInline muted
-                      onEnded={() => handleNextDesignTokenMobie(currentDesignTokenMovieName)}
+                      onEnded={() => handleNextDesignTokenMobie(currentDesignTokenMovieName as string)}
                     ></video>
                   </div>
                 </div>
@@ -262,7 +263,7 @@ function App() {
                 ></SpecButton>
               </div>
               <div className='mt-20 flex flex-col lg:flex-row justify-center items-center '>
-                <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[555px] relative'>
+                <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[585px] relative'>
                   <div className='p-10 h-64'>
                     <h3 className='text-4xl font-semibold'>Sync your tokens</h3>
                     <p className='mt-4 text-white/80 text-xl'>
@@ -272,7 +273,7 @@ function App() {
                   <SpecButton
                     content="Discover all available apps"
                     to="#overView"
-                    className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light w-80 justify-center mb-1'
+                    className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light w-80 justify-center'
                     append={<svg className='size-6 ml-2'>
                       <use className='size-6' href='/src/assets/img/icons.svg#arrow-right'></use>
                     </svg>}
@@ -281,7 +282,7 @@ function App() {
                     <img className='rounded-b-2xl w-full max-h-[228px]' src='/src/assets/img/syncyourtokens.avif'></img>
                   </div>
                 </div>
-                <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 max-lg:mt-12 w-full lg:w-1/2 h-[555px] relative'>
+                <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 max-lg:mt-12 w-full lg:w-1/2 h-[585px] relative'>
                   <div className='p-10 h-64'>
                     <h3 className='text-4xl font-semibold'>Customize outputs</h3>
                     <p className='mt-4 text-white/80 text-xl'>

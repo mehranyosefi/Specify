@@ -14,10 +14,11 @@ function SpecMenu() {
         <menu className="menu">
             <li onMouseOver={() => handleOver('solutions')} onMouseLeave={() => setSolutionsSubMenuActive(false)}
                 onClick={() => handleOver('solutions')} onBlur={() => setSolutionsSubMenuActive(false)}
+                className="group"
             >
                 <span>
                     Solutions
-                    <svg className="size-5 mt-1">
+                    <svg className="size-5 mt-1 transition-all duration-300 group-hover:rotate-180">
                         <use className="size-5" href="/src/assets/img/icons.svg#arrow-down-rounded"></use>
                     </svg>
                 </span>
@@ -69,10 +70,11 @@ function SpecMenu() {
             </li>
             <li onMouseOver={() => handleOver('resources')} onMouseLeave={() => setResourcesSubMenuActive(false)}
                 onClick={() => handleOver('resources')} onBlur={() => setResourcesSubMenuActive(false)}
+                className="group"
             >
                 <span>
                     Resources
-                    <svg className="size-5 mt-1">
+                    <svg className="size-5 mt-1 transition-all duration-300 group-hover:rotate-180">
                         <use className="size-5" href='/src/assets/img/icons.svg#arrow-down-rounded'></use>
                     </svg>
                 </span>

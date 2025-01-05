@@ -3,14 +3,19 @@ import SpecMenu from "./SpecMenu";
 import SpecButton from "./SpecButton";
 import SpecMenuMobile from "./SpecMenuMobile";
 import { useRef, useState } from "react";
+interface RefObject {
+    toggleMenu: (param: boolean) => void
+}
 function SpecHeader() {
     const [isMobileMenuActive, setIsMobileMenuActive] = useState<boolean>(false)
-    const menuMobile = useRef(null)
+    const menuMobile = useRef<RefObject>(null)
 
     function handleMenuMobile() {
         if (menuMobile.current) {
             setIsMobileMenuActive(!isMobileMenuActive)
-            menuMobile.current(isMobileMenuActive)
+            if (menuMobile.current) {
+                menuMobile.current.toggleMenu(isMobileMenuActive)
+            }
         }
     }
     return (
