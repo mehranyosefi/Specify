@@ -1,8 +1,8 @@
 import Slider from "react-slick"
 import SpecButton from "./SpecButton"
-import "@/assets/styles/components/SpecSlider.scss"
-import type { PropsSpecifyLove } from "@/types"
-import { studyCasesItems } from "@/types"
+import "/src/assets/styles/components/SpecSlider.scss"
+import type { PropsSpecifyLove } from "../types"
+import { studyCasesItems } from "../types"
 
 
 

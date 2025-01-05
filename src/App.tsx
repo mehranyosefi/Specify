@@ -1,11 +1,11 @@
 import { useState, useMemo, useRef } from 'react'
-import SpecHeader from '@/components/SpecHeader.tsx'
-import SpecFooter from '@/components/SpecFooter.tsx'
-import '@/assets/styles/components/App.scss'
+import SpecHeader from './components/SpecHeader.tsx'
+import SpecFooter from './components/SpecFooter.tsx'
+import './assets/styles/components/App.scss'
 import SpecButton from './components/SpecButton'
-import { AutoPlaySpecifyLove, StudyCases } from '@/components/SpecSlider.tsx'
-import type { DesignTokenMovies } from "@/types"
-import { parserItems, setupt_output_description_items, productTeamItems } from "@/types"
+import { AutoPlaySpecifyLove, StudyCases } from './components/SpecSlider.tsx'
+import type { DesignTokenMovies } from "./types"
+import { parserItems, setupt_output_description_items, productTeamItems } from "./types"
 
 
 function App() {

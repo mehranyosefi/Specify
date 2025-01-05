@@ -1,4 +1,4 @@
-import "@/assets/styles/components/SpecButton.scss"
+import "../assets/styles/components/SpecButton.scss"
 import type { PropsButton } from "src/types"
 
 // function ButtonPrepend(prepend) {

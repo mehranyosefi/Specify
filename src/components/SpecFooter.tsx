@@ -1,4 +1,4 @@
-import { footerMenuItems } from "@/types"
+import { footerMenuItems } from "../types"
 
 function SpecFooter() {
     return (
