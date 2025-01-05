@@ -3,7 +3,7 @@ import SpecHeader from './components/SpecHeader.tsx'
 import SpecFooter from './components/SpecFooter.tsx'
 import './assets/styles/components/App.scss'
 import SpecButton from './components/SpecButton'
-import { AutoPlaySpecifyLove, StudyCases } from './components/SpecSlider.tsx'
+import { AutoPlaySpecifyLove, StudyCases } from './components/SpecSlider'
 import type { DesignTokenMovies } from "./types"
 import { parserItems, setupt_output_description_items, productTeamItems } from "./types"
 
@@ -82,7 +82,7 @@ function App() {
                   to="/sayGodbay"
                   className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light'
                   append={<svg className='size-6 ml-2'>
-                    <use className='size-6' href='/src/assets/img/icons.svg#arrow-right'></use>
+                    <use className='size-6' href='/img/icons.svg#arrow-right'></use>
                   </svg>}
                 ></SpecButton>
               </div>
@@ -98,7 +98,7 @@ function App() {
                 Design Token workflow your Design System needs.
               </p>
               <div className="frame relative mt-12 hidden md:block max-w-full overflow-hidden">
-                <video className='relative z-10 cursor-auto w-full rounded-none block object-cover bg-[rgba(0, 0, 0, 0)]' src="/src/assets/video/jm7WGkaOefOXB61tZjv7cUhEsVE.webm" autoPlay muted playsInline
+                <video className='relative z-10 cursor-auto w-full rounded-none block object-cover bg-[rgba(0, 0, 0, 0)]' src="/video/jm7WGkaOefOXB61tZjv7cUhEsVE.webm" autoPlay muted playsInline
                   style={{
                     objectPosition: "50% 50%"
                   }}
@@ -128,7 +128,7 @@ function App() {
                     }}
                   ></div>
                 </div>
-                {secondvideo && <video className='absolute top-0 left-0' src="/src/assets/video/pSo8D917e0J1tbDXmiSXrdeHcY.mp4" autoPlay loop muted playsInline
+                {secondvideo && <video className='absolute top-0 left-0' src="/video/pSo8D917e0J1tbDXmiSXrdeHcY.mp4" autoPlay loop muted playsInline
                   style={{
                     cursor: "auto",
                     width: "100%",
@@ -142,7 +142,7 @@ function App() {
                 ></video>}
               </div>
               <div className='w-[380px] mx-auto md:hidden'>
-                <img src='/src/assets/img/engine-photo.avif' />
+                <img src='/img/engine-photo.avif' />
               </div>
             </section>
 
@@ -173,7 +173,7 @@ function App() {
                     </span>
                     <p className='mt-2 text-white/80'>Centralize tokens from Figma Styles, Figma Variables, Tokens Studio, or your own JSON file and ensure a consistent design language across all your digital products. Specify supports over 50 token types.</p>
                     <div className='relative'>
-                      <video ref={el => moveieRefs.current.unifiedMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/src/assets/video/unified.mp4"
+                      <video ref={el => moveieRefs.current.unifiedMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/unified.mp4"
                         playsInline
                       ></video>
                       {moviesOver.unifiedMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center md:hidden`} style={{
@@ -181,7 +181,7 @@ function App() {
                       }}>
                         <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
                           <>
-                            <svg className='size-7 text-white'><use className='size-7' href='/src/assets/img/icons.svg#play-circle'></use></svg>
+                            <svg className='size-7 text-white'><use className='size-7' href='/img/icons.svg#play-circle'></use></svg>
                             <span className='ml-[.1rem] font-semibold'>Play</span>
                           </>
                         }
@@ -196,14 +196,14 @@ function App() {
                     </span>
                     <p className='mt-2 text-white/80'>Specify provides a collaborative space where designers can sync design tokens, and developers can seamlessly integrate design tokens into their platform.</p>
                     <div className='relative'>
-                      <video ref={el => moveieRefs.current.effortlessMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/src/assets/video/effortless.mp4" playsInline
+                      <video ref={el => moveieRefs.current.effortlessMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/effortless.mp4" playsInline
                       ></video>
                       {moviesOver.effortlessMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center md:hidden`} style={{
                         boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
                       }}>
                         <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
                           <>
-                            <svg className='size-7 text-white'><use className='size-7' href='/src/assets/img/icons.svg#play-circle'></use></svg>
+                            <svg className='size-7 text-white'><use className='size-7' href='/img/icons.svg#play-circle'></use></svg>
                             <span className='ml-[.1rem] font-semibold'>Play</span>
                           </>
                         }
@@ -218,14 +218,14 @@ function App() {
                     </span>
                     <p className='mt-2 text-white/80'>Tailor Specify to fit your team's unique workflow. No matter how specific your design and development processes are, our platform adapts to your needs.</p>
                     <div className='relative'>
-                      <video ref={el => moveieRefs.current.customizablMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/src/assets/video/customizabl.mp4" playsInline
+                      <video ref={el => moveieRefs.current.customizablMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/customizabl.mp4" playsInline
                       ></video>
                       {moviesOver.customizablMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center md:hidden`} style={{
                         boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
                       }}>
                         <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
                           <>
-                            <svg className='size-7 text-white'><use className='size-7' href='/src/assets/img/icons.svg#play-circle'></use></svg>
+                            <svg className='size-7 text-white'><use className='size-7' href='/img/icons.svg#play-circle'></use></svg>
                             <span className='ml-[.1rem] font-semibold'>Play</span>
                           </>
                         }
@@ -237,7 +237,7 @@ function App() {
                 </ul>
                 <div className='w-[60%] ml-[2%] hidden xl:block'>
                   <div className='frame p-5 w-[700px] h[380px]'>
-                    <video className='w-full rounded-2xl animate-init' src={`/src/assets/video/${currentDesignTokenMovieName}.mp4`} autoPlay playsInline muted
+                    <video className='w-full rounded-2xl animate-init' src={`/video/${currentDesignTokenMovieName}.mp4`} autoPlay playsInline muted
                       onEnded={() => handleNextDesignTokenMobie(currentDesignTokenMovieName as string)}
                     ></video>
                   </div>
@@ -257,7 +257,7 @@ function App() {
               <div className='text-center mt-10'>
                 <SpecButton content="Watch video" to="#login"
                   prepend={
-                    <svg className='size-5 mr-2'><use className='size-5' href='/src/assets/img/icons.svg#play'></use></svg>
+                    <svg className='size-5 mr-2'><use className='size-5' href='/img/icons.svg#play'></use></svg>
                   }
                   className="border-gray-light px-3 pt-[.65rem] pb-[.8rem] rounded hover:bg-gray-light mx-auto font-semibold max-md:w-80 justify-center"
                 ></SpecButton>
@@ -275,11 +275,11 @@ function App() {
                     to="#overView"
                     className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light w-80 justify-center'
                     append={<svg className='size-6 ml-2'>
-                      <use className='size-6' href='/src/assets/img/icons.svg#arrow-right'></use>
+                      <use className='size-6' href='/img/icons.svg#arrow-right'></use>
                     </svg>}
                   ></SpecButton>
                   <div className='text-center w-full  max-h-[228px] absolute bottom-[0] left-0'>
-                    <img className='rounded-b-2xl w-full max-h-[228px]' src='/src/assets/img/syncyourtokens.avif'></img>
+                    <img className='rounded-b-2xl w-full max-h-[228px]' src='/img/syncyourtokens.avif'></img>
                   </div>
                 </div>
                 <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 max-lg:mt-12 w-full lg:w-1/2 h-[585px] relative'>
@@ -294,7 +294,7 @@ function App() {
                     to="#parsers"
                     className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light w-80 justify-center'
                     append={<svg className='size-6 ml-2'>
-                      <use className='size-6' href='/src/assets/img/icons.svg#arrow-right'></use>
+                      <use className='size-6' href='/img/icons.svg#arrow-right'></use>
                     </svg>}
                   ></SpecButton>
                   <div className='overflow-x-hidden max-w-full absolute left-0 bottom-0 mb-4'>
@@ -305,7 +305,7 @@ function App() {
                           {parserItems.firstRow.map((item: { background: string; icon: string; text: string }) => (
                             <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
                               <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/src/assets/img/${item.icon}.svg`} />
+                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
                               </div>
                               <span className='ml-2'>{item.text}</span>
 
@@ -321,7 +321,7 @@ function App() {
                           {parserItems.secondRow.map((item: { background: string; icon: string; text: string }) => (
                             <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
                               <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/src/assets/img/${item.icon}.svg`} />
+                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
                               </div>
                               <span className='ml-2'>{item.text}</span>
 
@@ -337,7 +337,7 @@ function App() {
                           {parserItems.thirdRow.map((item: { background: string; icon: string; text: string }) => (
                             <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
                               <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/src/assets/img/${item.icon}.svg`} />
+                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
                               </div>
                               <span className='ml-2'>{item.text}</span>
 
@@ -353,7 +353,7 @@ function App() {
                           {parserItems.fourRow.map((item: { background: string; icon: string; text: string }) => (
                             <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
                               <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/src/assets/img/${item.icon}.svg`} />
+                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
                               </div>
                               <span className='ml-2'>{item.text}</span>
 

@@ -264,7 +264,7 @@ export const productTeamItems = [
       name: "Roy Van Rooijen",
       role: "Product Designer",
     },
-    img: "/src/assets/img/product-teams/RoyVanRooijen.avif",
+    img: "/img/product-teams/RoyVanRooijen.avif",
   },
   {
     title: "Strapi",
@@ -273,7 +273,7 @@ export const productTeamItems = [
       name: "Hicham El Abbassi",
       role: "Front-end Developer",
     },
-    img: "/src/assets/img/product-teams/HichamElAbbassi.avif",
+    img: "/img/product-teams/HichamElAbbassi.avif",
   },
   {
     title: "MakeMusic",
@@ -282,7 +282,7 @@ export const productTeamItems = [
       name: "Gabriel Cousin",
       role: "Front-end Developer",
     },
-    img: "/src/assets/img/product-teams/GabrielCousin.avif",
+    img: "/img/product-teams/GabrielCousin.avif",
   },
   {
     title: "Poket",
@@ -291,7 +291,7 @@ export const productTeamItems = [
       name: "Niels Boey",
       role: "Product Designer",
     },
-    img: "/src/assets/img/product-teams/NielsBoey.avif",
+    img: "/img/product-teams/NielsBoey.avif",
   },
   {
     title: "Pelo studio",
@@ -300,7 +300,7 @@ export const productTeamItems = [
       name: "Alexis oney",
       role: "Lead Developer",
     },
-    img: "/src/assets/img/product-teams/Alexisoney.avif",
+    img: "/img/product-teams/Alexisoney.avif",
   },
 ];
 

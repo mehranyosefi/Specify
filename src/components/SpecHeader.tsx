@@ -36,7 +36,7 @@ function SpecHeader() {
                             content={<svg className="size-10"
                                 onClick={handleMenuMobile}
                             >
-                                <use className="size-10" href={`/src/assets/img/icons.svg#${!isMobileMenuActive ? 'menu' : 'close'}`}></use>
+                                <use className="size-10" href={`/img/icons.svg#${!isMobileMenuActive ? 'menu' : 'close'}`}></use>
                             </svg>}
                         />
                         {/* {isOnMobile ? <span>true</span> : <span>false</span>} */}
