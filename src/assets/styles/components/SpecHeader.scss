@@ -1,5 +1,5 @@
 .header {
-  @apply spec-container max-md:py-4;
+  @apply spec-container max-md:py-4 md:border-b md:border-gray-light;
 
   &--logo {
   }

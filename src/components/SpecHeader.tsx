@@ -44,7 +44,7 @@ function SpecHeader() {
                 </header>
             </div>
             <SpecMenuMobile ref={menuMobile} />
-            <hr className="text-gray-light" />
+            <hr className="text-gray-light md:hidden" />
         </>
     )
 }

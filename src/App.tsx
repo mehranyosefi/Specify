@@ -174,9 +174,9 @@ function App() {
                     <p className='mt-2 text-white/80'>Centralize tokens from Figma Styles, Figma Variables, Tokens Studio, or your own JSON file and ensure a consistent design language across all your digital products. Specify supports over 50 token types.</p>
                     <div className='relative'>
                       <video ref={el => moveieRefs.current.unifiedMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/unified.mp4"
-                        playsInline
+                        poster='/img/syncyourtokens.avif' playsInline
                       ></video>
-                      {moviesOver.unifiedMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center md:hidden`} style={{
+                      {moviesOver.unifiedMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center xl:hidden`} style={{
                         boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
                       }}>
                         <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
@@ -198,7 +198,7 @@ function App() {
                     <div className='relative'>
                       <video ref={el => moveieRefs.current.effortlessMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/effortless.mp4" playsInline
                       ></video>
-                      {moviesOver.effortlessMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center md:hidden`} style={{
+                      {moviesOver.effortlessMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center xl:hidden`} style={{
                         boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
                       }}>
                         <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
@@ -220,7 +220,7 @@ function App() {
                     <div className='relative'>
                       <video ref={el => moveieRefs.current.customizablMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/customizabl.mp4" playsInline
                       ></video>
-                      {moviesOver.customizablMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center md:hidden`} style={{
+                      {moviesOver.customizablMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center xl:hidden`} style={{
                         boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
                       }}>
                         <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
