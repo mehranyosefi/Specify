@@ -24,7 +24,9 @@ function SpecHeader() {
                 <header className="header">
                     <div className='flex items-center justify-between'>
                         <section className='header--logo'>
-                            <a href="/">Specify</a>
+                            <a href="/">
+                                <img width="85" src="/img/spec.svg" />
+                            </a>
                         </section>
                         <section className="header--menu"><SpecMenu></SpecMenu></section>
                         <section className="header--sign">

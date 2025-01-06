@@ -234,26 +234,32 @@ export const setupt_output_description_items = [
   {
     title: "Stay flexible",
     description: `Sync tokens from multiple sources to one repository, extract them in any structure using our SDK, GitHub integration, or CLI. We got you covered once you want to scale.`,
+    icon: "/img/stay-flexible.svg",
   },
   {
     title: "Reduce error margins",
     description: `Collaboration has never been easier, resulting in less errors and redundant meetings. Any change made is easily transferred and communicated with other teams.`,
+    icon: "/img/reduce-error.svg",
   },
   {
     title: "Automate",
     description: `Automatically sync, convert, and optimize your design tokens and vectors. Set up automated pull request with our Github integration.`,
+    icon: "/img/automate.svg",
   },
   {
     title: "Save time",
     description: `Set up once, get benefits instantly. We guarantee time savings for you design and development teams while you keep doing what you’re good at and what you enjoy.`,
+    icon: "/img/save-time.svg",
   },
   {
     title: "Prioritize quality",
     description: `When you’re able to put quality above anything else, it means your processes are well adopted. We can help you to prioritize the quality of your digital products.`,
+    icon: "/img/prioritize.svg",
   },
   {
     title: "Get the support you need",
     description: `We're here to help you to get the output you need. Feel free to challenge us if you think your output is not possible to generate!`,
+    icon: "/img/earth.svg",
   },
 ];
 export const productTeamItems = [

@@ -368,8 +368,11 @@ function App() {
               <div className='specify-setupoutput--description grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-14 mt-20'>
                 {setupt_output_description_items.map(item => {
                   return <div key={item.title}>
-                    <h5 className='font-semibold ml-6'>{item.title}</h5>
-                    <p className='text-white/80'>{item.description}</p>
+                    <div className='flex items-center'>
+                      <img width="21" height="21" src={item.icon} />
+                      <h5 className='font-semibold ml-1'>{item.title}</h5>
+                    </div>
+                    <p className='text-white/80 mt-2'>{item.description}</p>
                   </div>
                 })}
               </div>
