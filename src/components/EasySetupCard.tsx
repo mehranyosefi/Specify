@@ -17,7 +17,6 @@ function EasySetupCard(props: EasySetupCard) {
                     <use className='size-6' href='/img/icons.svg#arrow-right'></use>
                 </svg>}
             ></SpecButton>
-            {props.bottomSection}
         </div>
     );
 }
