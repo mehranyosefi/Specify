@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 export type DesignTokenMovies = {
   unified: boolean;
@@ -24,8 +24,55 @@ export type PropsSpecifyLove = {
   className: string;
 };
 
-//TODO define types for cases items
-export const studyCasesItems = [
+export type StudyCasesItem = {
+  id: number;
+  title: string;
+  apps: string[];
+  person: { name: string; role: string; description: string };
+  radiantColor: string;
+};
+export type EasySetupCard = {
+  title: string;
+  description: string;
+  buttonTitle: string;
+};
+
+export const specifyLoveItems: string[] = [
+  "/img/specifyLove/slider1.svg",
+  "/img/specifyLove/slider2.svg",
+  "/img/specifyLove/slider3.svg",
+  "/img/specifyLove/slider4.svg",
+  "/img/specifyLove/slider5.svg",
+  "/img/specifyLove/slider6.svg",
+  "/img/specifyLove/slider7.svg",
+  "/img/specifyLove/slider8.svg",
+  "/img/specifyLove/slider9.svg",
+  "/img/specifyLove/slider10.svg",
+  "/img/specifyLove/slider11.svg",
+];
+
+export const desingTokenMovieItems = [
+  {
+    name: "unified",
+    title: "Unified Design Language",
+    description:
+      "Centralize tokens from Figma Styles, Figma Variables, Tokens Studio, or your own JSON file and ensure a consistent design language across all your digital products. Specify supports over 50 token types.",
+  },
+  {
+    name: "effortless",
+    title: "Effortless collaboration",
+    description:
+      "Specify provides a collaborative space where designers can sync design tokens, and developers can seamlessly integrate design tokens into their platform.",
+  },
+  {
+    name: "customizabl",
+    title: "Customizable workflows",
+    description:
+      "Tailor Specify to fit your team is unique workflow. No matter how specific your design and development processes are, our platform adapts to your needs.",
+  },
+];
+
+export const studyCasesItems: StudyCasesItem[] = [
   {
     id: 1,
     title: "Carrefour",
@@ -63,7 +110,20 @@ export const studyCasesItems = [
     radiantColor: "#8D4AF7",
   },
 ];
-
+export const easySetupCardItems: EasySetupCard[] = [
+  {
+    title: "Sync your tokens",
+    description:
+      "Specify is natively compatible with Figma, GitHub, Notion, Raycast, and many more to come. Our REST API and CLI help you to connect even more.",
+    buttonTitle: "Discover all available apps",
+  },
+  {
+    title: "Customize outputs",
+    description:
+      "Specify’s open source parsers help you generate design tokens and assets that match your company standards.",
+    buttonTitle: "Discover all parsers",
+  },
+];
 //TODO define types for parserItems
 export const parserItems = {
   firstRow: [

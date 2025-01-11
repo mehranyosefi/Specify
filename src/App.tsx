@@ -1,78 +1,17 @@
-import { useState, useMemo, useRef, MouseEvent } from 'react'
 import SpecHeader from './components/SpecHeader.tsx'
 import SpecFooter from './components/SpecFooter.tsx'
+import DesignMovie from './components/DesignMovie.tsx'
 import './assets/styles/components/App.scss'
 import SpecButton from './components/SpecButton'
 import { AutoPlaySpecifyLove, StudyCases } from './components/SpecSlider'
-import type { DesignTokenMovies } from "./types"
-import { parserItems, setupt_output_description_items, productTeamItems } from "./types"
-
+import { parserItems, setupt_output_description_items, productTeamItems, studyCasesItems, specifyLoveItems } from "./types"
+import DesignTokenMovie from './components/DesignTokenMovie.tsx'
 
 function App() {
-  const [secondvideo, setSecondvideo] = useState(false)
-  setTimeout(() => {
-    setSecondvideo(true)
-  }, 4000);
-
-  const [designTokenMovies, setDesignTokenMovies] = useState<DesignTokenMovies>({
-    unified: true,
-    effortless: false,
-    customizabl: false
-  })
-
-  const currentDesignTokenMovieName = useMemo(() => {
-    return Object.keys(designTokenMovies).find((key) => designTokenMovies[key as keyof DesignTokenMovies])
-  }, [designTokenMovies]);
-
-  const moveieRefs = useRef<{
-    unifiedMovie: HTMLVideoElement | null;
-    effortlessMovie: HTMLVideoElement | null;
-    customizablMovie: HTMLVideoElement | null;
-  }>({
-    unifiedMovie: null,
-    effortlessMovie: null,
-    customizablMovie: null,
-  })
-  const [moviesOver, setMoviesOver] = useState({
-    unifiedMovie: true,
-    effortlessMovie: true,
-    customizablMovie: true,
-  })
-
-
-
-  function handleActiveMovie(entry: keyof DesignTokenMovies): void {
-    const obj = { ...designTokenMovies }
-    Object.keys(obj).forEach((key) => {
-      if (key === entry) obj[key as keyof DesignTokenMovies] = true
-      else obj[key as keyof DesignTokenMovies] = false
-    })
-    setDesignTokenMovies(obj)
-  }
-  function handleNextDesignTokenMobie(entry: string) {
-    const keys: string[] = Object.keys(designTokenMovies)
-    const nextKey = keys[(keys.indexOf(entry) + 1) % keys.length]
-    handleActiveMovie(nextKey as keyof DesignTokenMovies)
-  }
-
-  function playMovie(e: MouseEvent, entry: string): void {
-    console.log(e)
-    type MovieRefs = typeof moveieRefs.current;
-    setMoviesOver({
-      ...moviesOver,
-      [entry]: false
-    })
-    moveieRefs.current[entry as keyof MovieRefs]?.setAttribute('controls', 'controls')
-    moveieRefs.current[entry as keyof MovieRefs]?.play()
-
-  }
-
-
   return (
     <>
       <div className='root-element'>
         <div className='mx-auto lg:container'>
-          {/* lg:max-w-[1000px] xl:max-w-[1150px] */}
           <SpecHeader />
           <main className='max-w-full overflow-hidden'>
             <section className='specify-designsystem spec-container'>
@@ -97,59 +36,15 @@ function App() {
                 Flexible and powerful, Specify makes it easy to build the exact <br />
                 Design Token workflow your Design System needs.
               </p>
-              <div className="frame relative mt-12 hidden md:block max-w-full overflow-hidden">
-                <video className='relative z-10 cursor-auto w-full rounded-none block object-cover bg-[rgba(0, 0, 0, 0)]' src="/video/jm7WGkaOefOXB61tZjv7cUhEsVE.webm" autoPlay muted playsInline
-                  style={{
-                    objectPosition: "50% 50%"
-                  }}
-                ></video>
-                <div className='fading absolute left-0 top-0 right-0 bottom-0'>
-                  <div className='absolute size-full z-10' style={{
-                    background: 'radial-gradient(71.875% 69.4289% at 53.8393% 50%, rgba(21, 23, 24, 0) 63.244%, rgb(21, 23, 24) 100%)'
-                  }}></div>
-                  <div className='absolute h-[15%] w-full top-0 z-10 rotate-180'
-                    style={{
-                      background: 'linear-gradient(rgba(21, 23, 24, 0) 0%, rgba(21, 23, 24, 0.1) 14.0625%, rgba(21, 23, 24, 0.32) 39.5833%, rgba(21, 23, 24, 0.66) 72.5%, rgba(21, 23, 24, 0.816) 84%, rgb(21, 23, 24) 94%)'
-                    }}
-                  ></div>
-                  <div className='absolute h-[15%] w-full bottom-0 z-10'
-                    style={{
-                      background: 'linear-gradient(rgba(21, 23, 24, 0) 0%, rgba(21, 23, 24, 0.1) 14.0625%, rgba(21, 23, 24, 0.32) 39.5833%, rgba(21, 23, 24, 0.66) 72.5%, rgba(21, 23, 24, 0.816) 84%, rgb(21, 23, 24) 94%)'
-                    }}
-                  ></div>
-                  <div className='absolute h-[10%] w-[480px] -left-[230px] top-1/2 z-10 rotate-90'
-                    style={{
-                      background: 'linear-gradient(rgba(21, 23, 24, 0) 0%, rgba(21, 23, 24, 0.1) 14.0625%, rgba(21, 23, 24, 0.32) 39.5833%, rgba(21, 23, 24, 0.66) 63%, rgba(21, 23, 24, 0.816) 80%, rgb(21, 23, 24) 95%)'
-                    }}
-                  ></div>
-                  <div className='absolute h-[10%] w-[480px] -right-[230px] top-1/2 z-10 -rotate-90'
-                    style={{
-                      background: 'linear-gradient(rgba(21, 23, 24, 0) 0%, rgba(21, 23, 24, 0.1) 14.0625%, rgba(21, 23, 24, 0.32) 39.5833%, rgba(21, 23, 24, 0.66) 63%, rgba(21, 23, 24, 0.816) 80%, rgb(21, 23, 24) 95%)'
-                    }}
-                  ></div>
-                </div>
-                {secondvideo && <video className='absolute top-0 left-0' src="/video/pSo8D917e0J1tbDXmiSXrdeHcY.mp4" autoPlay loop muted playsInline
-                  style={{
-                    cursor: "auto",
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: 0,
-                    display: "block",
-                    objectFit: "cover",
-                    backgroundColor: "rgba(0, 0, 0, 0)",
-                    objectPosition: "50% 50%"
-                  }}
-                ></video>}
-              </div>
+              <DesignMovie />
               <div className='w-[380px] mx-auto md:hidden'>
                 <img src='/img/engine-photo.avif' />
               </div>
             </section>
-
             <section className="specify-love mt-40">
               <h2 className='w-fit mx-auto text-white/80'>Specify is loved by</h2>
               <div>
-                <AutoPlaySpecifyLove className="mt-6" />
+                <AutoPlaySpecifyLove items={specifyLoveItems} className="mt-6" />
               </div>
             </section>
             <section className='specify-designtokens spec-container mt-60'>
@@ -164,88 +59,10 @@ function App() {
                   className="border-gray-light px-6 pt-[.65rem] pb-[.8rem] rounded hover:bg-gray-light mx-auto font-semibold max-md:w-80 justify-center"
                 ></SpecButton>
               </div>
-              <div className='flex mt-24'>
-                <ul className='w-full md:w-[570px] xl:w-[38%] mx-auto  p-0 m-0 list-none'>
-                  {/* TODO set component for it */}
-                  <li className='hover:cursor-pointer border-none xl:border-b border-b-gray-light pb-7 text-center max-xl:mb-28' onClick={() => handleActiveMovie('unified')}>
-                    <span className={`font-semibold transition-colors duration-500 max-xl:text-white ${designTokenMovies.unified && 'text-purple'}`}>
-                      <p className='text-2xl xl:text-base'>Unified Design Language</p>
-                    </span>
-                    <p className='mt-2 text-white/80'>Centralize tokens from Figma Styles, Figma Variables, Tokens Studio, or your own JSON file and ensure a consistent design language across all your digital products. Specify supports over 50 token types.</p>
-                    <div className='relative'>
-                      <video ref={el => moveieRefs.current.unifiedMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/unified.mp4"
-                        poster='/img/syncyourtokens.avif' playsInline
-                      ></video>
-                      {moviesOver.unifiedMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center xl:hidden`} style={{
-                        boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
-                      }}>
-                        <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
-                          <>
-                            <svg className='size-7 text-white'><use className='size-7' href='/img/icons.svg#play-circle'></use></svg>
-                            <span className='ml-[.1rem] font-semibold'>Play</span>
-                          </>
-                        }
-                          onButtonClick={(e) => playMovie(e, 'unifiedMovie')}
-                        />
-                      </div>}
-                    </div>
-                  </li>
-                  <li className='hover:cursor-pointer border-none xl:border-b border-b-gray-light pb-7 mt-5 text-center max-xl:mb-28' onClick={() => handleActiveMovie('effortless')}>
-                    <span className={`font-semibold transition-colors duration-500 max-xl:text-white ${designTokenMovies.effortless && 'text-purple'}`}>
-                      <p className='text-2xl xl:text-base'>Effortless collaboration</p>
-                    </span>
-                    <p className='mt-2 text-white/80'>Specify provides a collaborative space where designers can sync design tokens, and developers can seamlessly integrate design tokens into their platform.</p>
-                    <div className='relative'>
-                      <video ref={el => moveieRefs.current.effortlessMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/effortless.mp4" playsInline
-                      ></video>
-                      {moviesOver.effortlessMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center xl:hidden`} style={{
-                        boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
-                      }}>
-                        <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
-                          <>
-                            <svg className='size-7 text-white'><use className='size-7' href='/img/icons.svg#play-circle'></use></svg>
-                            <span className='ml-[.1rem] font-semibold'>Play</span>
-                          </>
-                        }
-                          onButtonClick={(e) => playMovie(e, 'effortlessMovie')}
-                        />
-                      </div>}
-                    </div>
-                  </li>
-                  <li className='hover:cursor-pointer mt-5 text-center max-xl:mb-28' onClick={() => handleActiveMovie('customizabl')}>
-                    <span className={`font-semibold transition-colors duration-500 max-xl:text-white ${designTokenMovies.customizabl && 'text-purple'}`}>
-                      <p className='text-2xl xl:text-base'>Customizable workflows</p>
-                    </span>
-                    <p className='mt-2 text-white/80'>Tailor Specify to fit your team's unique workflow. No matter how specific your design and development processes are, our platform adapts to your needs.</p>
-                    <div className='relative'>
-                      <video ref={el => moveieRefs.current.customizablMovie = el} className='xl:hidden w-full rounded-2xl mt-5' src="/video/customizabl.mp4" playsInline
-                      ></video>
-                      {moviesOver.customizablMovie && <div className={`absolute left-0 top-0 right-0 w-full h-full bg-gray-dark/60 flex items-center justify-center xl:hidden`} style={{
-                        boxShadow: "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.08) 0px 16px 32px 0px"
-                      }}>
-                        <SpecButton className='rounded-3xl  py-2 px-3 bg-gray-dark border-none !shadow-none' content={
-                          <>
-                            <svg className='size-7 text-white'><use className='size-7' href='/img/icons.svg#play-circle'></use></svg>
-                            <span className='ml-[.1rem] font-semibold'>Play</span>
-                          </>
-                        }
-                          onButtonClick={(e) => playMovie(e, 'customizablMovie')}
-                        />
-                      </div>}
-                    </div>
-                  </li>
-                </ul>
-                <div className='w-[60%] ml-[2%] hidden xl:block'>
-                  <div className='frame p-5 w-[700px] h[380px]'>
-                    <video className='w-full rounded-2xl animate-init' src={`/video/${currentDesignTokenMovieName}.mp4`} autoPlay playsInline muted
-                      onEnded={() => handleNextDesignTokenMobie(currentDesignTokenMovieName as string)}
-                    ></video>
-                  </div>
-                </div>
-              </div>
+              <DesignTokenMovie />
             </section>
             <section className='specify-studycases mt-52'>
-              <StudyCases />
+              <StudyCases items={studyCasesItems} />
             </section>
             <section className='specify-setupoutput spec-container md:mt-60'>
               <h2 className='w-fit mx-auto text-5xl mt-12 font-bold text-center leading-[1.2]'>
@@ -263,7 +80,7 @@ function App() {
                 ></SpecButton>
               </div>
               <div className='mt-20 flex flex-col lg:flex-row justify-center items-center '>
-                <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[585px] relative'>
+                <div className='border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[585px] relative'>
                   <div className='p-10 h-64'>
                     <h3 className='text-4xl font-semibold'>Sync your tokens</h3>
                     <p className='mt-4 text-white/80 text-xl'>
@@ -282,7 +99,7 @@ function App() {
                     <img className='rounded-b-2xl w-full max-h-[228px]' src='/img/syncyourtokens.avif'></img>
                   </div>
                 </div>
-                <div className='synctokens border rounded-2xl border-gray-light text-center mx-2 max-lg:mt-12 w-full lg:w-1/2 h-[585px] relative'>
+                <div className='border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[585px] relative max-lg:mt-12'>
                   <div className='p-10 h-64'>
                     <h3 className='text-4xl font-semibold'>Customize outputs</h3>
                     <p className='mt-4 text-white/80 text-xl'>

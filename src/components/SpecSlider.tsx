@@ -2,12 +2,9 @@ import Slider from "react-slick"
 import SpecButton from "./SpecButton"
 import "/src/assets/styles/components/SpecSlider.scss"
 // import type { PropsSpecifyLove } from "../types"
-import { studyCasesItems } from "../types"
+import type { StudyCasesItem } from "../types"
 
-
-
-
-export function AutoPlaySpecifyLove(props: { settings?: object, style?: object, className?: string }) {
+export function AutoPlaySpecifyLove(props: { items: string[], settings?: object, style?: object, className?: string }) {
     const {
         settings = {
             dots: false,
@@ -44,74 +41,29 @@ export function AutoPlaySpecifyLove(props: { settings?: object, style?: object, 
             ]
         },
         style,
-        className
+        className,
+        items
     } = props
 
     return (
         <div className={`slider-container-lovedBy max-w-full overflow-hidden ${className}`} style={style}>
             <Slider {...settings}>
-                <div>
-                    <a href="#slider1">
-                        <img src="/img/specifyLove/slider1.svg" alt="slider1" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider2">
-                        <img src="/img/specifyLove/slider2.svg" alt="slider2" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider3">
-                        <img src="/img/specifyLove/slider3.svg" alt="slider3" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider4">
-                        <img src="/img/specifyLove/slider4.svg" alt="slider4" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider5">
-                        <img src="/img/specifyLove/slider5.svg" alt="slider5" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider6">
-                        <img src="/img/specifyLove/slider6.svg" alt="slider6" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider7">
-                        <img src="/img/specifyLove/slider7.svg" alt="slider7" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider8">
-                        <img src="/img/specifyLove/slider8.svg" alt="slider8" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider9">
-                        <img src="/img/specifyLove/slider9.svg" alt="slider9" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider10">
-                        <img src="/img/specifyLove/slider10.svg" alt="slider10" />
-                    </a>
-                </div>
-                <div>
-                    <a href="#slider11">
-                        <img src="/img/specifyLove/slider11.svg" alt="slider11" />
-                    </a>
-                </div>
+                {items.map((item: string) => {
+                    return (
+                        <div key={item}>
+                            <a href={`#${item}`}>
+                                <img src={item} alt={item} />
+                            </a>
+                        </div>
+                    )
+                })}
             </Slider>
         </div>
     )
 
 }
 
-export function StudyCases(props: { settings?: object, style?: object, className?: string }) {
+export function StudyCases(props: { items: StudyCasesItem[], settings?: object, style?: object, className?: string }) {
     const {
         settings = {
             arrows: false,
@@ -128,6 +80,7 @@ export function StudyCases(props: { settings?: object, style?: object, className
             slidesToScroll: 5,
 
         },
+        items,
         style,
         className
     } = props
@@ -182,7 +135,7 @@ export function StudyCases(props: { settings?: object, style?: object, className
     return (
         <div className={`slider-container-study ${className}`} style={style}>
             <Slider {...settings}>
-                {studyCasesItems.map((item) => {
+                {items.map((item) => {
                     return <Card key={item.id} title={item.title}
                         apps={item.apps}
                         person={item.person}
