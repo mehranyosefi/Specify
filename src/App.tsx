@@ -80,7 +80,7 @@ function App() {
                 ></SpecButton>
               </div>
               <div className='mt-20 flex flex-col lg:flex-row justify-center items-center '>
-                <div className='border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[585px] relative'>
+                <div className='border rounded-2xl border-gray-light text-center lg:mr-2 w-full lg:w-1/2 h-[585px] relative'>
                   <div className='p-10 h-64'>
                     <h3 className='text-4xl font-semibold'>Sync your tokens</h3>
                     <p className='mt-4 text-white/80 text-xl'>
@@ -99,7 +99,7 @@ function App() {
                     <img className='rounded-b-2xl w-full max-h-[228px]' src='/img/syncyourtokens.avif'></img>
                   </div>
                 </div>
-                <div className='border rounded-2xl border-gray-light text-center mx-2 w-full lg:w-1/2 h-[585px] relative max-lg:mt-12'>
+                <div className='border rounded-2xl border-gray-light text-center lg:ml-2 w-full lg:w-1/2 h-[585px] relative max-lg:mt-12'>
                   <div className='p-10 h-64'>
                     <h3 className='text-4xl font-semibold'>Customize outputs</h3>
                     <p className='mt-4 text-white/80 text-xl'>
