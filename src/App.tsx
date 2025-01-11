@@ -3,9 +3,10 @@ import SpecFooter from './components/SpecFooter.tsx'
 import DesignMovie from './components/DesignMovie.tsx'
 import './assets/styles/components/App.scss'
 import SpecButton from './components/SpecButton'
-import { AutoPlaySpecifyLove, StudyCases } from './components/SpecSlider'
+import { AutoPlaySlider, InfinitAnimation, StudyCases } from './components/SpecSlider'
 import { parserItems, setupt_output_description_items, productTeamItems, studyCasesItems, specifyLoveItems } from "./types"
 import DesignTokenMovie from './components/DesignTokenMovie.tsx'
+import EasySetupCard from './components/EasySetupCard.tsx'
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
             <section className="specify-love mt-40">
               <h2 className='w-fit mx-auto text-white/80'>Specify is loved by</h2>
               <div>
-                <AutoPlaySpecifyLove items={specifyLoveItems} className="mt-6" />
+                <AutoPlaySlider items={specifyLoveItems} className="mt-6" />
               </div>
             </section>
             <section className='specify-designtokens spec-container mt-60'>
@@ -80,107 +81,30 @@ function App() {
                 ></SpecButton>
               </div>
               <div className='mt-20 flex flex-col lg:flex-row justify-center items-center '>
-                <div className='border rounded-2xl border-gray-light text-center lg:mr-2 w-full lg:w-1/2 h-[585px] relative'>
-                  <div className='p-10 h-64'>
-                    <h3 className='text-4xl font-semibold'>Sync your tokens</h3>
-                    <p className='mt-4 text-white/80 text-xl'>
-                      Specify is natively compatible with Figma, GitHub, Notion, Raycast, and many more to come. Our REST API and CLI help you to connect even more.
-                    </p>
-                  </div>
-                  <SpecButton
-                    content="Discover all available apps"
-                    to="#overView"
-                    className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light w-80 justify-center'
-                    append={<svg className='size-6 ml-2'>
-                      <use className='size-6' href='/img/icons.svg#arrow-right'></use>
-                    </svg>}
-                  ></SpecButton>
+                <EasySetupCard
+                  title='Sync your tokens'
+                  description='Specify is natively compatible with Figma, GitHub, Notion, Raycast, and many more to come. Our REST API and CLI help you to connect even more.'
+                  buttonTitle='Discover all parsers'
+                  classes='lg:mr-2'
+                >
                   <div className='text-center w-full  max-h-[228px] absolute bottom-[0] left-0'>
                     <img className='rounded-b-2xl w-full max-h-[228px]' src='/img/syncyourtokens.avif'></img>
                   </div>
-                </div>
-                <div className='border rounded-2xl border-gray-light text-center lg:ml-2 w-full lg:w-1/2 h-[585px] relative max-lg:mt-12'>
-                  <div className='p-10 h-64'>
-                    <h3 className='text-4xl font-semibold'>Customize outputs</h3>
-                    <p className='mt-4 text-white/80 text-xl'>
-                      Specify’s open source parsers help you generate design tokens and assets that match your company standards.
-                    </p>
-                  </div>
-                  <SpecButton
-                    content="Discover all parsers"
-                    to="#parsers"
-                    className='rounded-3xl bg-white text-gray-dark !py-2 px-3 font-semibold !duration-500 hover:bg-gray-dark hover:text-white hover:border-gray-light w-80 justify-center'
-                    append={<svg className='size-6 ml-2'>
-                      <use className='size-6' href='/img/icons.svg#arrow-right'></use>
-                    </svg>}
-                  ></SpecButton>
+                </EasySetupCard>
+
+                <EasySetupCard
+                  title='Customize outputs'
+                  description='Specify’s open source parsers help you generate design tokens and assets that match your company standards.'
+                  buttonTitle='Discover all available apps'
+                  classes='lg:ml-2 max-lg:mt-12'
+                >
                   <div className='overflow-x-hidden max-w-full absolute left-0 bottom-0 mb-4'>
-                    <ul className='flex items-center list-none w-[2000px] overflow-hidden'>
-                      {[1, 2].map((_index) => (
-                        <li className={`flex animate-scroll-left`} key={_index}
-                        >
-                          {parserItems.firstRow.map((item: { background: string; icon: string; text: string }) => (
-                            <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
-                              <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
-                              </div>
-                              <span className='ml-2'>{item.text}</span>
-
-                            </div>
-                          ))}
-                        </li>
-                      ))}
-                    </ul>
-                    <ul className='flex items-center list-none w-[2000px] overflow-hidden mt-3 relative -left-[867px]'>
-                      {[1, 2].map((_index) => (
-                        <li className={`flex animate-scroll-right`} key={_index}
-                        >
-                          {parserItems.secondRow.map((item: { background: string; icon: string; text: string }) => (
-                            <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
-                              <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
-                              </div>
-                              <span className='ml-2'>{item.text}</span>
-
-                            </div>
-                          ))}
-                        </li>
-                      ))}
-                    </ul>
-                    <ul className='flex items-center list-none w-[2000px] overflow-hidden mt-3'>
-                      {[1, 2].map((_index) => (
-                        <li className={`flex animate-scroll-left-2`} key={_index}
-                        >
-                          {parserItems.thirdRow.map((item: { background: string; icon: string; text: string }) => (
-                            <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
-                              <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
-                              </div>
-                              <span className='ml-2'>{item.text}</span>
-
-                            </div>
-                          ))}
-                        </li>
-                      ))}
-                    </ul>
-                    <ul className='flex items-center list-none w-[2000px] overflow-hidden mt-3 relative -left-[867px]'>
-                      {[1, 2].map((_index) => (
-                        <li className={`flex animate-scroll-right`} key={_index}
-                        >
-                          {parserItems.fourRow.map((item: { background: string; icon: string; text: string }) => (
-                            <div key={`${_index}-${item.text}`} className='flex items-center rounded border border-gray-light flex-nowrap mx-2 min-w-fit px-2 py-[.45rem]'>
-                              <div className='size-6 rounded text-center pt-[.1rem]' style={{ background: item.background }}>
-                                <img className='size-5 m-auto' src={`/img/${item.icon}.svg`} />
-                              </div>
-                              <span className='ml-2'>{item.text}</span>
-
-                            </div>
-                          ))}
-                        </li>
-                      ))}
-                    </ul>
+                    <InfinitAnimation items={parserItems.firstRow} />
+                    <InfinitAnimation items={parserItems.secondRow} classes='relative -left-[867px] mt-3' animationType='animate-scroll-right' />
+                    <InfinitAnimation items={parserItems.thirdRow} classes='mt-3' />
+                    <InfinitAnimation items={parserItems.FourthRow} classes='relative -left-[867px] mt-3' animationType='animate-scroll-right' />
                   </div>
-                </div>
+                </EasySetupCard>
               </div>
               <div className='specify-setupoutput--description grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-14 mt-20'>
                 {setupt_output_description_items.map(item => {

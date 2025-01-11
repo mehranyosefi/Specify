@@ -31,11 +31,19 @@ export type StudyCasesItem = {
   person: { name: string; role: string; description: string };
   radiantColor: string;
 };
-export type EasySetupCard = {
-  title: string;
-  description: string;
-  buttonTitle: string;
+export type ParserItem = {
+  id: number;
+  text: string;
+  icon: string;
+  to: string;
+  background: string;
 };
+
+// export type EasySetupCard = {
+//   title: string;
+//   description: string;
+//   buttonTitle: string;
+// };
 
 export const specifyLoveItems: string[] = [
   "/img/specifyLove/slider1.svg",
@@ -110,22 +118,22 @@ export const studyCasesItems: StudyCasesItem[] = [
     radiantColor: "#8D4AF7",
   },
 ];
-export const easySetupCardItems: EasySetupCard[] = [
-  {
-    title: "Sync your tokens",
-    description:
-      "Specify is natively compatible with Figma, GitHub, Notion, Raycast, and many more to come. Our REST API and CLI help you to connect even more.",
-    buttonTitle: "Discover all available apps",
-  },
-  {
-    title: "Customize outputs",
-    description:
-      "Specify’s open source parsers help you generate design tokens and assets that match your company standards.",
-    buttonTitle: "Discover all parsers",
-  },
-];
+// export const easySetupCardItems: EasySetupCard[] = [
+//   {
+//     title: "Sync your tokens",
+//     description:
+//       "Specify is natively compatible with Figma, GitHub, Notion, Raycast, and many more to come. Our REST API and CLI help you to connect even more.",
+//     buttonTitle: "Discover all available apps",
+//   },
+//   {
+//     title: "Customize outputs",
+//     description:
+//       "Specify’s open source parsers help you generate design tokens and assets that match your company standards.",
+//     buttonTitle: "Discover all parsers",
+//   },
+// ];
 //TODO define types for parserItems
-export const parserItems = {
+export const parserItems: { [key: string]: ParserItem[] } = {
   firstRow: [
     {
       id: 1,
@@ -251,7 +259,7 @@ export const parserItems = {
       background: "rgb(145, 207, 172)" /* green */,
     },
   ],
-  fourRow: [
+  FourthRow: [
     {
       id: 1,
       text: "to-typescript-defination",
